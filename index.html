@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+    
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,400;1,600&display=swap" 
+    rel="stylesheet">
+    
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css"/>
+    <title>News Site</title>
+</head>
+<body>
+    <header>
+        <img src="./news-icon-18.png" width="120px" />
+  
+        <div class="inputSearch desktop">
+          <form id="searchForm">
+            <input type="text" placeholder="Type to search..." id="searchInput" />
+            <span> <i class="fa-solid fa-search"></i></span>
+          </form>
+        </div>
+        <nav class="desktop">
+          <ul>
+            <li onclick="Search('olympics 2024')">Olympics 2024</li>
+            <li onclick="Search('Budget 2024')">Budget 2024</li>
+            <li onclick="Search('climate')">Climate</li>
+            <li onclick="Search('movies')">Movies</li>
+          </ul>
+        </nav>
+  
+        <div class="menuBtn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+  
+        <div class="mobile hidden">
+          <nav>
+            <ul>
+              <li onclick="Search('olympics 2024')">Olympics 2024</li>
+              <li onclick="Search('Budget 2024')">Budget 2024</li>
+              <li onclick="Search('Climate')">Climate</li>
+              <li onclick="Search('movies')">Movies</li>
+            </ul>
+          </nav>
+          <div class="inputSearch">
+            <form id="searchFormMobile">
+              <input type="text" placeholder="Type to search..." id="searchInputMobile" />
+              <span> <i class="fa-solid fa-search"></i></span>
+            </form>
+          </div>
+        </div>
+      </header>
+  
+      <!-- Main Content -->
+      <main>
+        <span class="loader"></span>
+      </main>
+  
+    <script src="script.js"></script>
+</body>
+</html>

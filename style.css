@@ -1,0 +1,236 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    background: #f5f6f9;
+}
+
+/* Loader Styles */
+.loader {
+    width: 48px;
+    height: 48px;
+    display: block;
+    margin: 15px auto;
+    position: relative;
+    color: #FFF;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.loader::after,
+.loader::before {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 60%;
+    left: 50%;
+    transform: scale(0.5) translate(0, 0);
+    background-color: black;
+    border-radius: 50%;
+    animation: animloader 1s infinite ease-in-out;
+}
+
+.loader::before {
+    background-color: #FF3D00;
+    transform: scale(0.5) translate(-48px, -48px);
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animloader {
+    50% {
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+/* Header Styles */
+header {
+    background-color:#ffffff   ;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    justify-content: space-between;
+    box-shadow: 0px 3px 10px 0 #E2DAD6;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    padding: 0;
+}
+nav ul li {
+    cursor: pointer;
+}
+nav ul li:hover {
+    color: #B43F3F;
+    font-weight: bolder;
+    box-shadow: 0px 4px 0px #B43F3F;
+}
+
+/* Search Box Styles */
+.inputSearch,
+form {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 400px;
+    border-radius: 35px;
+    overflow: hidden;
+    border: .5px solid #B43F3F;
+}
+.inputSearch input {
+    width: 100%;
+    height: 100%;
+    padding: 0px 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+.inputSearch span {
+    width: 70px;
+    background-color: #B43F3F;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+}
+.menuBtn {
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #B43F3F;
+}
+.menuBtn:hover {
+    background-color: #B43F3F;
+    color: #ffffff;
+}
+.desktop {
+    display: none;
+}
+@media all and (min-width:700px) {
+    header {
+        padding: 5px 30px;
+    }
+    .desktop {
+        display: flex;
+    }
+    .menuBtn {
+        display: none;
+    }
+}
+
+/*** Mobile Menu ***/
+.mobile {
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    max-width: 700px;
+    background-color: #f5f6f9;
+    opacity: 0.9;
+    height: 100vh;
+    padding: 20px;
+    box-shadow: none;
+    z-index: 2;
+    margin-left: -10px;
+}
+.mobile nav,
+.mobile nav ul {
+    flex-direction: column;
+    align-items: center;
+}
+.mobile .inputSearch,
+.mobile form {
+    height: 35px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media all and (min-width:700px) {
+    .mobile {
+        display: none;
+    }
+}
+
+/*** CSS Card ***/
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 10px;
+    margin: auto;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    box-shadow: 7px 7px 25px 1px rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    background: #ffffff;
+}
+.card img {
+    min-height: 170px;
+    max-height: 170px;
+    background-color: #f4f4f4;
+    object-fit: cover;
+}
+.card h4,
+.card div {
+    padding: 5px 10px;
+    margin: 0px;
+}
+.publishbyDate {
+    display: flex;
+    align-items: center;
+    color: #a5a1a1;
+}
+.publishbyDate p {
+    margin: 0px;
+    font-size: 14px;
+}
+.publishbyDate span {
+    padding: 0px 10px;
+}
+.desc {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    margin: 0;
+}
+.card a {
+    color: inherit;
+    text-decoration: none;
+}
+@media all and (min-width:700px) {
+    main {
+        padding: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
